@@ -8,6 +8,7 @@ import navgurukul from "./navgurukul.png";
 
 
 
+
 function App() {
   return (
     <Router>
@@ -27,6 +28,8 @@ function App() {
         <Route path="/Contect" element={<Contect />} />
       </Routes>
     </Router>
+
+
 
 
   );
