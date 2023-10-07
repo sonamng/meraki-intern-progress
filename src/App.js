@@ -32,9 +32,7 @@ function App() {
         </Routes>
       </Router>
 
-      <Typography variant="h5" style={{ textAlign: "center" ,padding:"30px", position:"relative" }}>
-        Thank you for reading this paragraph.
-      </Typography>
+      
       <div className='footer'>
         <div className='col1'>one</div>
         <div className='col2'>two</div>

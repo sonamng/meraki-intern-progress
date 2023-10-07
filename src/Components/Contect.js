@@ -1,5 +1,4 @@
 
-import Skeleton from '@mui/material/Skeleton';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
@@ -22,17 +21,14 @@ function Contect() {
           alignItems="center"        >
             <FormControl>
               <FormLabel>Enter Name</FormLabel>
-              <TextField></TextField>
+              <TextField placeholder='enter name'></TextField>
 
-              <FormLabel>Enter Last Name</FormLabel>
-              <TextField></TextField>
+              <TextField placeholder='enter last name'></TextField>
 
-              <FormLabel>Enter Phone</FormLabel>
-              <TextField></TextField>
+              <TextField placeholder='enter email'></TextField>
 
+              <TextField placeholder='enter phone'></TextField>
 
-              <FormLabel>Enter Email</FormLabel>
-              <TextField></TextField>
               <Button>Submit</Button>
             </FormControl>
 
