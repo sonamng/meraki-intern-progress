@@ -67,6 +67,10 @@
 
 // export default Home;
 
+
+
+
+
 import React, { useEffect, useState } from "react";
 import { experimentalStyled as styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -84,7 +88,6 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function Home() {
   const [data, setData] = useState([]);
-
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((result) => result.json())
@@ -97,7 +100,7 @@ function Home() {
 
   return (
     <>
-      <Typography variant='h3'>Fetch API GET Method</Typography>
+      <Typography variant='h3'>Fetch API GET Method using Fetch().</Typography>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
           {data.map((item, index) => (
@@ -107,10 +110,15 @@ function Home() {
               <Item>{item.body}</Item>
             </Grid>
           ))}
+         
         </Grid>
+
+
       </Box>
     </>
   );
 }
 
 export default Home;
+
+

@@ -42,7 +42,20 @@ body{
 .footer{
     border: 2px solid black;
     height: 150px;
-    background-color:rgb(228, 106, 18);
+    background-color:rgb(228, 106, 18);   
+}
 
-    
+.row{
+  width: 100%;
+  border: 1ps solid black;
+  height: auto;
+}
+
+.col{
+  width: 300px;
+  height: 200px;
+  border: 1px solid black;
+  float: left;
+  justify-content: center;
+  text-align: center;
 }
