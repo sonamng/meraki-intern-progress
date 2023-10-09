@@ -5,11 +5,6 @@ import Contect from './Components/Contect';
 import About from './Components/About';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import navgurukul from "./navgurukul.png";
-import { Typography } from "@mui/material";
-
-
-
-
 
 function App() {
   return (
@@ -31,13 +26,6 @@ function App() {
           <Route path="/Contect" element={<Contect />} />
         </Routes>
       </Router>
-
-      
-      <div className='footer'>
-        <div className='col1'>one</div>
-        <div className='col2'>two</div>
-        <div className='col3'>three</div>
-      </div>
 
     </>
 
