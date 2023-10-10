@@ -8,10 +8,7 @@ function About() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    // Define the API URL you want to fetch data from
     const apiUrl = "https://jsonplaceholder.typicode.com/posts";
-
-    // Use Axios to make a GET request to the API
     axios.get(apiUrl)
       .then((response) => {
         // Handle the response data here
