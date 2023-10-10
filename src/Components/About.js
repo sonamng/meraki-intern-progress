@@ -6,6 +6,11 @@ import axios from 'axios';
 
 function About() {
   const [data, setData] = useState([]);
+  const [count, setCount] = useState(0);
+
+  const handleClick = () => {
+    setCount(count + 1);
+  }
 
   useEffect(() => {
     const apiUrl = "https://jsonplaceholder.typicode.com/posts";
@@ -23,20 +28,32 @@ function About() {
 
   return (
     <>
+
+
+
+
       <Typography variant='h3' style={{ textAlign: "center" }}>About Us</Typography>
+
+
+      <button onClick={handleClick}>
+        Count: {count}
+      </button>
+      
       <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
         <Avatar alt="Sonam" src="/static/images/avatar/1.jpg" />
       </Stack>
       <div className='row'>
         {data.map((item) => (
           <div className='col'>
-          <div key={item.id}>
-            <strong>{item.title}</strong>
-            <p>{item.body}</p>
-          </div>
+            <div key={item.id}>
+              <strong>{item.title}</strong>
+              <p>{item.body}</p>
+            </div>
           </div>
         ))}
       </div>
+
+
     </>
   );
 }
