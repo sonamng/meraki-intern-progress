@@ -10,6 +10,8 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
+import SvgIcon from '@mui/material/SvgIcon';
+
 
 
 const style = {
@@ -27,7 +29,7 @@ function Contect() {
           <ListItemText primary="Inbox" />
         </ListItem>
         <Divider />
-        <ListItem  divider>
+        <ListItem divider>
           <ListItemText primary="Drafts" />
         </ListItem>
         <ListItem >
@@ -38,6 +40,10 @@ function Contect() {
           <ListItemText primary="Spam" />
         </ListItem>
       </List>
+
+      <SvgIcon>
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+      </SvgIcon>
       <Typography variant='h4' style={{ textAlign: "center" }}>Contect Me</Typography>
 
 
