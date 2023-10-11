@@ -15,6 +15,8 @@ import Chip from '@mui/material/Chip';
 import CircularProgress from '@mui/material/CircularProgress';
 import Switch from '@mui/material/Switch';
 import { getValue } from '@testing-library/user-event/dist/utils';
+import Checkbox from '@mui/material/Checkbox';
+import Radio from '@mui/material/Radio';
 
 
 const style = {
@@ -89,6 +91,8 @@ function Contect() {
       <Switch color='primary'
       onChange={getValue}
       />
+      <Checkbox/>
+      <Radio></Radio>
 
 
 
