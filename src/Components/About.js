@@ -6,51 +6,39 @@ import axios from 'axios';
 
 function About() {
   const [data, setData] = useState([]);
-  const [count, setCount] = useState(0);
+  useEffect(()=>{
+    axios.get("https://jsonplaceholder.typicode.com/posts")
+    .then((res)=>{
+      console.log("red",res);
+      setData(res.data)
+    })
+  },[])
 
-  const handleClick = () => {
-    setCount(count + 1);
-  }
-
-  useEffect(() => {
-    const apiUrl = "https://jsonplaceholder.typicode.com/posts";
-    axios.get(apiUrl)
-      .then((response) => {
-        // Handle the response data here
-        console.log(response.data);
-        setData(response.data);
-      })
-      .catch((error) => {
-        // Handle any errors that occur during the request
-        console.error("Error fetching data:", error);
-      });
-  }, []);
 
   return (
     <>
-
-
-
-
       <Typography variant='h3' style={{ textAlign: "center" }}>About Us</Typography>
 
-
-      <button onClick={handleClick}>
-        Count: {count}
-      </button>
-      
       <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
         <Avatar alt="Sonam" src="/static/images/avatar/1.jpg" />
       </Stack>
+
+
+      <br></br>
+      <h2>hiiii</h2>
+
       <div className='row'>
+
         {data.map((item) => (
-          <div className='col'>
-            <div key={item.id}>
-              <strong>{item.title}</strong>
-              <p>{item.body}</p>
+          <div>
+            <div>
+              <strong>Title- {item.title}</strong>
+              <p>UserID- {item.userId}</p>
+              <p>Body- {item.body}</p>
             </div>
           </div>
         ))}
+
       </div>
 
 
