@@ -14,6 +14,7 @@ import SvgIcon from '@mui/material/SvgIcon';
 import Chip from '@mui/material/Chip';
 import CircularProgress from '@mui/material/CircularProgress';
 import Switch from '@mui/material/Switch';
+import { getValue } from '@testing-library/user-event/dist/utils';
 
 
 const style = {
@@ -23,6 +24,11 @@ const style = {
 };
 
 function Contect() {
+
+  const getValue=()=>{
+    console.log("function colled");
+
+  }
   return (
     <>
       <Typography variant='h4' style={{ textAlign: "center" }}>Contect Me</Typography>
@@ -80,7 +86,11 @@ function Contect() {
         <CircularProgress />
       </Box>
 
-      <Switch />
+      <Switch color='primary'
+      onChange={getValue}
+      />
+
+
 
 
 
