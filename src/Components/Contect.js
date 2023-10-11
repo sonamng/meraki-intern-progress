@@ -13,10 +13,7 @@ import Divider from '@mui/material/Divider';
 import SvgIcon from '@mui/material/SvgIcon';
 import Chip from '@mui/material/Chip';
 import CircularProgress from '@mui/material/CircularProgress';
-
-
-
-
+import Switch from '@mui/material/Switch';
 
 
 const style = {
@@ -28,6 +25,31 @@ const style = {
 function Contect() {
   return (
     <>
+      <Typography variant='h4' style={{ textAlign: "center" }}>Contect Me</Typography>
+      <Box sx={{ width: '100%' }}>
+        <Grid
+          container
+          justifyContent="center"
+          alignItems="center"        >
+          <FormControl>
+            <FormLabel>Name</FormLabel>
+            <TextField placeholder='Name'></TextField>
+            <FormLabel> Last Name</FormLabel>
+            <TextField placeholder='Lastname'></TextField>
+            <FormLabel>Email</FormLabel>
+            <TextField placeholder='Email'></TextField>
+            <FormLabel>Phone</FormLabel>
+            <TextField placeholder='Phone'></TextField>
+
+            <Button>Submit</Button>
+          </FormControl>
+        </Grid>
+
+        <Stack style={{ display: "flex", justifyContent: "center", padding: "20px" }} direction="row" spacing={2}>
+          <Button variant="outlined" >Contect</Button>
+          <Button variant="outlined" >Email</Button>
+        </Stack>
+      </Box>
 
       <List sx={style} component="nav" aria-label="mailbox folders">
         <ListItem >
@@ -57,33 +79,11 @@ function Contect() {
       <Box sx={{ display: 'flex' }}>
         <CircularProgress />
       </Box>
-      <Typography variant='h4' style={{ textAlign: "center" }}>Contect Me</Typography>
+
+      <Switch />
 
 
-      <Box sx={{ width: '100%' }}>
-        <Grid
-          container
-          justifyContent="center"
-          alignItems="center"        >
-          <FormControl>
-            <FormLabel>Name</FormLabel>
-            <TextField placeholder='Name'></TextField>
-            <FormLabel> Last Name</FormLabel>
-            <TextField placeholder='Lastname'></TextField>
-            <FormLabel>Email</FormLabel>
-            <TextField placeholder='Email'></TextField>
-            <FormLabel>Phone</FormLabel>
-            <TextField placeholder='Phone'></TextField>
 
-            <Button>Submit</Button>
-          </FormControl>
-        </Grid>
-
-        <Stack style={{ display: "flex", justifyContent: "center", padding: "20px" }} direction="row" spacing={2}>
-          <Button variant="outlined" >Contect</Button>
-          <Button variant="outlined" >Email</Button>
-        </Stack>
-      </Box>
 
     </>
   );
