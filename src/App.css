@@ -59,3 +59,15 @@ body{
   justify-content: center;
   text-align: center;
 }
+.box{
+  padding: 20px;
+  width: 1500px;
+  height: auto;
+  border: 2px solid rgb(59, 9, 9);
+  margin: auto;
+}
+
+.image {
+  width: 200px; 
+  height: auto; 
+}

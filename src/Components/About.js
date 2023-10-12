@@ -1,49 +1,89 @@
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+
+// function About() {
+//   const [data, setData] = useState([]);
+//   useEffect(() => {
+//     axios.get("https://fakestoreapi.com/products")
+//       .then((res) => {
+//         console.log("red", res);
+//         setData(res.data)
+//       })
+//   }, [])
+//   console.log("data", data)
+
+//   return (
+//     <>
+//       <div className='row'>
+//         {data.map((item) => (
+//           <div>
+//             <div className='box'>
+//               <img className='image' src={item.image} alt={item.title} />
+//               <br />
+//               <strong>Title- {item.title}</strong>
+//               <p>ID- {item.id}</p>
+//               <p>Price {item.price}</p>
+//               <button>Add Price</button>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </>
+//   );
+// }
+
+// export default About;
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState, useEffect } from 'react';
-import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
 import axios from 'axios';
 
 function About() {
   const [data, setData] = useState([]);
-  useEffect(()=>{
-    axios.get("https://jsonplaceholder.typicode.com/posts")
-    .then((res)=>{
-      console.log("red",res);
-      setData(res.data)
-    })
-  },[])
 
 
+  useEffect(() => {
+    axios.get("https://fakestoreapi.com/products")
+      .then((res) => {
+        console.log("red", res);
+        setData(res.data)
+      })
+  }, [])
+  console.log("data", data)
+
+  const handleAddPrice = (id) => {
+    alert("clicked add button")
+
+  }
+  
   return (
     <>
-      <Typography variant='h3' style={{ textAlign: "center" }}>About Us</Typography>
-
-      <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
-        <Avatar alt="Sonam" src="/static/images/avatar/1.jpg" />
-      </Stack>
-
-
-      <br></br>
-      <h2>hiiii</h2>
-
       <div className='row'>
-
         {data.map((item) => (
-          <div>
-            <div>
+          <div key={item.id}>
+            <div className='box'>
+              <img className='image' src={item.image} alt={item.title} />
+              <br />
               <strong>Title- {item.title}</strong>
-              <p>UserID- {item.userId}</p>
-              <p>Body- {item.body}</p>
+              <p>ID- {item.id}</p>
+              <p>Price: {item.price}</p>
+              <button onClick={() => handleAddPrice(item.id)}>Add Price</button>
             </div>
           </div>
         ))}
-
       </div>
-
-
     </>
   );
 }
 
 export default About;
+
