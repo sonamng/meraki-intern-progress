@@ -43,11 +43,7 @@ const Singup = () => {
             <Box
                 component="form"
                 sx={{
-                    '& > :not(style)': { m: 2, width: '70ch' },
-                    textAlign: "center"
-                }}
-                noValidate
-                autoComplete="off"
+                    '& > :not(style)': { m: 2, width: '70ch' },textAlign: "center"}}noValidate autoComplete="off"
             >
 
                 <TextField value={name} onChange={handeName} id="standard-basic" label="Name" variant="standard" />
@@ -80,3 +76,73 @@ const Singup = () => {
     )
 }
 export default Singup;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
