@@ -111,7 +111,6 @@ function About() {
 
   const handleAddPrice = (id) => {
     alert("Add Price button clicked for product with ID: " + id);
-    // You can implement your logic to add a price here.
   };
 
   const handleRemove = (id) => {

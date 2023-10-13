@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -14,7 +14,11 @@ import Checkbox from '@mui/material/Checkbox';
 import Radio from '@mui/material/Radio';
 import Slider from '@mui/material/Slider';
 import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem'; 
+import MenuItem from '@mui/material/MenuItem';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Menu from '@mui/material/Menu';
+
+
 
 const style = {
   width: '100%',
@@ -22,7 +26,18 @@ const style = {
   bgcolor: 'background.paper',
 };
 
-function Contact() {
+function Contact({ handleEdit, handleDelete }) {
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleOpenMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+
   const getValue = () => {
     console.log("function called");
   }
@@ -67,7 +82,7 @@ function Contact() {
         </svg>
       </Box>
 
-   
+
 
       <Switch color='primary' onChange={getValue} />
       <Checkbox />
@@ -80,8 +95,91 @@ function Contact() {
         <MenuItem value="Node">Javascript</MenuItem>
         <MenuItem value="Node">Python</MenuItem>
       </Select>
+
+
+      <MoreVertIcon
+        style={{ color: "black", cursor: "pointer" }}
+        onClick={handleOpenMenu}
+        sx={{ p: 0 }}
+      />
+
+      <Menu
+        sx={{
+          mt: "15px",
+          boxShadow: "none"
+
+        }}
+        anchorEl={anchorEl}
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleEdit}>
+          <Typography textAlign="center">Edit</Typography>
+        </MenuItem>
+
+        <MenuItem onClick={handleDelete}>
+          <Typography textAlign="center">Delete</Typography>
+        </MenuItem>
+      </Menu>
+
     </>
   );
 }
 
 export default Contact;
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import MoreVertIcon from '@mui/icons-material/MoreVert';
+// import Menu from '@mui/material/Menu';
+// import MenuItem from '@mui/material/MenuItem';
+// import Typography from '@mui/material/Typography';
+
+// function Sonam({ handleEdit, handleDelete }) {
+//   const [anchorEl, setAnchorEl] = useState(null);
+
+//   const handleOpenMenu = (event) => {
+//     setAnchorEl(event.currentTarget);
+//   };
+
+//   const handleClose = () => {
+//     setAnchorEl(null);
+//   };
+
+//   return (
+//     <>
+//       <MoreVertIcon
+//         style={{ color: "black", cursor: "pointer" }}
+//         onClick={handleOpenMenu}
+//         sx={{ p: 0 }}
+//       />
+
+//       <Menu
+//         sx={{
+//           mt: "15px",
+//           boxShadow: "none"
+
+//         }}
+//         anchorEl={anchorEl}
+//         open={Boolean(anchorEl)}
+//         onClose={handleClose}
+//       >
+//         <MenuItem onClick={handleEdit}>
+//           <Typography textAlign="center">Edit</Typography>
+//         </MenuItem>
+
+//         <MenuItem onClick={handleDelete}>
+//           <Typography textAlign="center">Delete</Typography>
+//         </MenuItem>
+//       </Menu>
+//     </>
+//   );
+// }
+
+// export default Sonam;
