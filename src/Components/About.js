@@ -38,13 +38,19 @@
 
 
 
+
+
+
+
+
+
+
+
 // import React, { useState, useEffect } from 'react';
 // import axios from 'axios';
 
 // function About() {
 //   const [data, setData] = useState([]);
-
-
 //   useEffect(() => {
 //     axios.get("https://fakestoreapi.com/products")
 //       .then((res) => {
@@ -58,8 +64,6 @@
 //     alert("clicked add button")
 
 //   }
-
-
 //   const handleRemove = (id) => {
 //     alert("clicked remove button")
 //     const updatedItems = data.filter((item) => item.id !== id);
@@ -95,6 +99,11 @@
 
 
 
+
+
+
+
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -114,7 +123,7 @@ function About() {
   };
 
   const handleRemove = (id) => {
-    alert("Remove button clicked for product with ID: " + id);
+    // alert("Remove button clicked for product with ID: " + id);
     const updatedItems = data.filter((item) => item.id !== id);
     setData(updatedItems);
   };
@@ -122,6 +131,12 @@ function About() {
   return (
     <>
       <div className='row'>
+        
+      <h1>All Element</h1>
+      <button>Cloth</button>
+      <button>jawlaty</button>
+      <button>laptop</button>
+
         {data.map((item) => (
           <div key={item.id}>
             <div className='box'>

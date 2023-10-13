@@ -15,7 +15,7 @@ body{
   margin-right: 10px;
 
 }
-.home, .about, .Contect{
+.home, .about, .Contect,.Login,.Singup{
   margin-left: 20px;
   color: white;
   font-size: x-large;
