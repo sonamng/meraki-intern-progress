@@ -1,57 +1,60 @@
-
-
-body{
-    margin: 0%;
-    padding: 0%;
+body {
+  margin: 0%;
+  padding: 0%;
 }
 
-.nav{
+.nav {
   height: 100px;
   width: 100%;
-  background-color:rgb(228, 106, 18);
+  background-color: rgb(228, 106, 18);
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 10px;
 
 }
-.home, .about, .Contect,.Login,.Singup{
+
+.home,
+.about,
+.Contect,
+.Login,
+.Singup {
   margin-left: 20px;
   color: white;
   font-size: x-large;
   text-decoration: none;
-  line-height:10px;
+  line-height: 10px;
 }
 
-.images{
-  margin-left: 1373px;
+.images {
+  margin-left: 1190px;
   height: 48px;
 }
 
 
 
 
-.cityname{
-    width: 892px;
-    height: auto;
-    border: 1px solid rgb(206, 199, 199);
-    text-align: center;
-    border-radius: 5px;
+.cityname {
+  width: 892px;
+  height: auto;
+  border: 1px solid rgb(206, 199, 199);
+  text-align: center;
+  border-radius: 5px;
 }
 
-.footer{
-    border: 2px solid black;
-    height: 150px;
-    background-color:rgb(228, 106, 18);   
+.footer {
+  border: 2px solid black;
+  height: 150px;
+  background-color: rgb(228, 106, 18);
 }
 
-.row{
+.row {
   width: 100%;
   border: 1ps solid black;
   height: auto;
 }
 
-.col{
+.col {
   width: 300px;
   height: 200px;
   border: 1px solid black;
@@ -59,7 +62,8 @@ body{
   justify-content: center;
   text-align: center;
 }
-.box{
+
+.box {
   padding: 20px;
   width: 1500px;
   height: auto;
@@ -68,6 +72,13 @@ body{
 }
 
 .image {
-  width: 200px; 
-  height: auto; 
+  width: 200px;
+  height: auto;
+}
+.container{
+  border: 2px solid darkred;
+  height: auto;
+  width: 540px;
+  margin: auto;
+  padding: 10px;
 }

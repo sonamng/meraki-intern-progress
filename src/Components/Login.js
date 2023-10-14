@@ -3,6 +3,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
 import React, { useState } from 'react';
+import { Phone } from '@mui/icons-material';
 
 
 
@@ -34,17 +35,11 @@ const Singup = () => {
                     '& > :not(style)': { m: 2, width: '70ch' }, textAlign: "center"
                 }} noValidate autoComplete="off"
             >
-
                 <br />
                 <TextField value={email} onChange={handeEmail} id="standard-basic" label="Email" variant="standard" />
                 <br />
                 <TextField value={password} onChange={handePassword} id="standard-basic" label="Password" variant="standard" />
                 <br />
-
-
-
-
-
                 <Button variant="contained">Submit</Button>
 
             </Box>
