@@ -1,80 +1,36 @@
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-
-// function About() {
-//   const [data, setData] = useState([]);
-//   useEffect(() => {
-//     axios.get("https://fakestoreapi.com/products")
-//       .then((res) => {
-//         console.log("red", res);
-//         setData(res.data)
-//       })
-//   }, [])
-//   console.log("data", data)
-
-//   return (
-//     <>
-//       <div className='row'>
-//         {data.map((item) => (
-//           <div>
-//             <div className='box'>
-//               <img className='image' src={item.image} alt={item.title} />
-//               <br />
-//               <strong>Title- {item.title}</strong>
-//               <p>ID- {item.id}</p>
-//               <p>Price {item.price}</p>
-//               <button>Add Price</button>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </>
-//   );
-// }
-
-// export default About;
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useState, useEffect } from 'react';
 // import axios from 'axios';
 
 // function About() {
 //   const [data, setData] = useState([]);
+
 //   useEffect(() => {
 //     axios.get("https://fakestoreapi.com/products")
 //       .then((res) => {
 //         console.log("red", res);
 //         setData(res.data)
-//       })
-//   }, [])
-//   console.log("data", data)
+//       });
+//   }, []);
 
 //   const handleAddPrice = (id) => {
-//     alert("clicked add button")
+//     alert("Add Price button clicked for product with ID: " + id);
+//   };
 
-//   }
 //   const handleRemove = (id) => {
-//     alert("clicked remove button")
 //     const updatedItems = data.filter((item) => item.id !== id);
 //     setData(updatedItems);
-
-//   }
-//   console.log("updatedItems",updatedItems);
+//   };
 
 //   return (
 //     <>
 //       <div className='row'>
+
+//       <h1>All Element</h1>
+//       <button>Cloth</button>
+//       <button>jawlaty</button>
+//       <button>laptop</button>
+
 //         {data.map((item) => (
 //           <div key={item.id}>
 //             <div className='box'>
@@ -84,8 +40,7 @@
 //               <p>ID- {item.id}</p>
 //               <p>Price: {item.price}</p>
 //               <button onClick={() => handleAddPrice(item.id)}>Add Price</button>
-//               <button onClick={() => handleRemove(item.id)}>Add Price</button>
-
+//               <button onClick={() => handleRemove(item.id)}>Remove</button>
 //             </div>
 //           </div>
 //         ))}
@@ -103,18 +58,25 @@
 
 
 
+// import Button from '@mui/material/Button';
+
+import {
+  Button, Box, Container
+  , Typography
+} from '@mui/material';
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function About() {
   const [data, setData] = useState([]);
+  const [category, setCategory] = useState(null);
 
   useEffect(() => {
     axios.get("https://fakestoreapi.com/products")
       .then((res) => {
         console.log("red", res);
-        setData(res.data)
+        setData(res.data);
       });
   }, []);
 
@@ -123,36 +85,49 @@ function About() {
   };
 
   const handleRemove = (id) => {
-    // alert("Remove button clicked for product with ID: " + id);
     const updatedItems = data.filter((item) => item.id !== id);
     setData(updatedItems);
   };
 
+  const filterByCategory = (category) => {
+    setCategory(category);
+  };
+
+
+  const filterCategory = category
+    ? data.filter((item) => item.category === category)
+    : data;
+
   return (
     <>
-      <div className='row'>
-        
-      <h1>All Element</h1>
-      <button>Cloth</button>
-      <button>jawlaty</button>
-      <button>laptop</button>
+      <Box className='row'>
+        <Container className='button-row' style={{ textAlign: "center" }}>
+          <Button onClick={() => filterByCategory("women's clothing")}>Women's Clothing</Button>
+          <Button onClick={() => filterByCategory('jewelery')}>Jewelry</Button>
+          <Button onClick={() => filterByCategory('electronics')}>Electronics</Button>
+          <Button onClick={() => filterByCategory("men's clothing")}>Men's Clothing</Button>
+        </Container>
 
-        {data.map((item) => (
+        {filterCategory.map((item) => (
           <div key={item.id}>
             <div className='box'>
               <img className='image' src={item.image} alt={item.title} />
               <br />
-              <strong>Title- {item.title}</strong>
-              <p>ID- {item.id}</p>
-              <p>Price: {item.price}</p>
-              <button onClick={() => handleAddPrice(item.id)}>Add Price</button>
-              <button onClick={() => handleRemove(item.id)}>Remove</button>
+              <Typography variant='h6'>Title {item.title}</Typography>
+
+              <p>Price {item.price}</p>
+              <div style={{ margin: '10px' }}>
+                <Button variant="contained" onClick={() => handleAddPrice(item.id)}>Add Price</Button>
+                <Button variant="contained" onClick={() => handleRemove(item.id)}>Remove</Button>
+              </div>
+
             </div>
           </div>
         ))}
-      </div>
+      </Box>
     </>
   );
 }
 
 export default About;
+
